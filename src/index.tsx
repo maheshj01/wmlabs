@@ -11,7 +11,6 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 
-
 const Layout = () => {
   return (
     <div >
@@ -19,8 +18,6 @@ const Layout = () => {
     </div>
   );
 };
-
-
 
 const router = createBrowserRouter([
   {
@@ -30,7 +27,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <App />,
+        element: <App />
       },
       {
         path: "/privacy-policy",

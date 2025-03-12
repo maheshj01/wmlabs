@@ -9,7 +9,6 @@ const App = () => {
   return (
     <div
       className="min-h-screen relative gradient">
-
       {/* Main Content */}
       <div className="flex flex-col items-center justify-center min-h-screen text-center text-white p-6 relative z-10">
         <h1 className="text-5xl font-bold mb-4 animate-fade-in">Widget Media Labs</h1>
@@ -22,7 +21,7 @@ const App = () => {
           }}
           variant={"playstore"}
         >
-          <IoLogoGooglePlaystore className="mr-2" />
+          {/* <IoLogoGooglePlaystore className="mr-2" /> */}
           Download on Play Store
         </Button>
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-sm text-white opacity-80 hover:opacity-100 transition-opacity">
