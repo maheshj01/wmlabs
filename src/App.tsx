@@ -2,8 +2,10 @@ import React from "react";
 import { IoLogoGooglePlaystore } from "react-icons/io5";
 import { Button } from "./components/ui/button";
 import Constants from "./constants";
+import { useNavigate } from "react-router";
 
 const App = () => {
+  const navigate = useNavigate();
   return (
     <div
       className="min-h-screen relative gradient">
@@ -23,15 +25,15 @@ const App = () => {
           <IoLogoGooglePlaystore className="mr-2" />
           Download on Play Store
         </Button>
-      </div>
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-sm text-white opacity-80 hover:opacity-100 transition-opacity">
-        <a
-          href="/privacy-policy" // Replace with your actual privacy policy link
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Privacy Policy
-        </a>
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-sm text-white opacity-80 hover:opacity-100 transition-opacity">
+          <Button
+            variant={"link"}
+            className="underline text-white hover:text-primary"
+            onClick={() => {
+              navigate("/privacy-policy");
+            }}
+          >Privacy Policy</Button>
+        </div>
       </div>
     </div >
   );

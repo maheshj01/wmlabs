@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import PrivacyPolicy from './routes/vocabhub/privacy';
+import PrivacyPolicy from './routes/epoch/privacy';
 import ErrorRoute from './routes/error';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 import { AppThemeProvider } from './contexts/AppThemeProvider';
@@ -33,7 +33,7 @@ const router = createBrowserRouter([
         element: <App />,
       },
       {
-        path: "/privacy",
+        path: "/privacy-policy",
         element: <PrivacyPolicy />,
       },
     ],
