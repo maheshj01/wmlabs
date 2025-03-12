@@ -82,9 +82,12 @@ const PrivacyPolicy = () => {
             <p>This policy is effective as of July 11, 2021</p>
 
             <p><strong>Contact Us</strong></p>
-            <p>
-                If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at maheshmn121@gmail.com.
-            </p>
+            <span>
+                If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at &nbsp;
+                <a href={`mailto:${process.env.REACT_APP_CONTACT_EMAIL}`} className="text-black hover:underline">
+                    {process.env.REACT_APP_CONTACT_EMAIL}
+                </a>
+            </span>
         </div>
     );
 };

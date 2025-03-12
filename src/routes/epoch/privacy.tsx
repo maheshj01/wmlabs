@@ -26,7 +26,7 @@ const PrivacyPolicy = () => {
                                 href="https://www.google.com/policies/privacy/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-blue-400 hover:underline"
+                                className="text-blue-600 hover:underline"
                             >
                                 Google Play Services
                             </a>
@@ -36,7 +36,7 @@ const PrivacyPolicy = () => {
                                 href="https://firebase.google.com/policies/analytics"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-blue-400 hover:underline"
+                                className="text-blue-600 hover:underline"
                             >
                                 Google Analytics for Firebase
                             </a>
@@ -59,12 +59,12 @@ const PrivacyPolicy = () => {
                     </p>
 
                     <h2 className="text-2xl font-semibold mb-3">Contact Us</h2>
-                    <p className="opacity-90">
-                        If you have any questions, feel free to reach out at{" "}
-                        <a href="mailto:maheshmn121@gmail.com" className="text-blue-400 hover:underline">
-                            maheshmn121@gmail.com
-                        </a>.
-                    </p>
+                    <span>
+                        If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at &nbsp;
+                        <a href={`mailto:${process.env.REACT_APP_CONTACT_EMAIL}`} className="text-black hover:underline">
+                            {process.env.REACT_APP_CONTACT_EMAIL}
+                        </a>
+                    </span>
                 </div>
 
                 <div className="mt-6 text-sm opacity-80 hover:opacity-100 transition-opacity">

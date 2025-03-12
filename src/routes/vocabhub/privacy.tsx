@@ -30,8 +30,12 @@ const PrivacyPolicy = () => {
                 <p>The app does use third party services that may collect the information used to identify you.</p>
                 <p>Link to privacy policy of third party service providers used by the app</p>
                 <ul>
-                    <li><a href="https://www.google.com/policies/privacy/" target="_blank" rel="noopener noreferrer">Google Play Services</a></li>
-                    <li><a href="https://firebase.google.com/policies/analytics" target="_blank" rel="noopener noreferrer">Google Analytics for Firebase</a></li>
+                    <li><a
+                        className="text-black hover:underline"
+                        href="https://www.google.com/policies/privacy/" target="_blank" rel="noopener noreferrer">Google Play Services</a></li>
+                    <li><a
+                        className="text-black hover:underline"
+                        href="https://firebase.google.com/policies/analytics" target="_blank" rel="noopener noreferrer">Google Analytics for Firebase</a></li>
                 </ul>
             </div>
 
@@ -82,9 +86,12 @@ const PrivacyPolicy = () => {
             <p>This policy is effective as of July 11, 2021</p>
 
             <p><strong>Contact Us</strong></p>
-            <p>
-                If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at maheshmn121@gmail.com.
-            </p>
+            <span>
+                If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at &nbsp;
+                <a href={`mailto:${process.env.REACT_APP_CONTACT_EMAIL}`} className="text-black hover:underline">
+                    {process.env.REACT_APP_CONTACT_EMAIL}
+                </a>
+            </span>
         </div>
     );
 };
