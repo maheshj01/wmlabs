@@ -13,7 +13,7 @@ const App = () => {
       <div className="flex flex-col items-center justify-center min-h-screen text-center text-white p-6 relative z-10">
         <h1 className="text-5xl font-bold mb-4 animate-fade-in">Widget Media Labs</h1>
         <p className="text-lg mb-6 animate-fade-in delay-200">
-          Explore innovative apps crafted with passion.
+          Explore Beautiful apps crafted with passion.
         </p>
         <Button
           onClick={() => {
