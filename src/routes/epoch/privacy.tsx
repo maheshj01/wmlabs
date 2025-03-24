@@ -60,7 +60,7 @@ const PrivacyPolicy = () => {
 
                     <h2 className="text-2xl font-semibold mb-3">Contact Us</h2>
                     <span>
-                        If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at &nbsp;
+                        If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at &nbsp;
                         <a href={`mailto:${process.env.REACT_APP_CONTACT_EMAIL}`} className="text-black hover:underline">
                             {process.env.REACT_APP_CONTACT_EMAIL}
                         </a>
