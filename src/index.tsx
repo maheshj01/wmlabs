@@ -6,6 +6,7 @@ import PrivacyPolicy from './routes/epoch/privacy';
 import ErrorRoute from './routes/error';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 import { AppThemeProvider } from './contexts/AppThemeProvider';
+import AutoFillPolicy from './routes/autofill/privacy';
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "/privacy-policy",
         element: <PrivacyPolicy />,
+      },
+      {
+        path: "/autofill/privacy-policy",
+        element: <AutoFillPolicy />,
       },
     ],
   },

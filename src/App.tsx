@@ -1,5 +1,4 @@
 import React from "react";
-import { IoLogoGooglePlaystore } from "react-icons/io5";
 import { Button } from "./components/ui/button";
 import Constants from "./constants";
 import { useNavigate } from "react-router";

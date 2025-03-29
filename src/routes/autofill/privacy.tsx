@@ -10,38 +10,20 @@ const PrivacyPolicy = () => {
                 </p>
 
                 <div className="bg-white bg-opacity-10 p-6 rounded-lg text-left animate-fade-in delay-400">
+                    <h2 className="text-2xl font-semibold mb-3">User Responsibility</h2>
+                    <p className="mb-4 opacity-90">
+                        Users are responsible for managing their Gemini API key and its usage within the extension. We do not store, process, or have access to your API key.
+                    </p>
+
                     <h2 className="text-2xl font-semibold mb-3">Information Collection and Use</h2>
                     <p className="mb-4 opacity-90">
-                        We may collect limited data to enhance your experience. However, personal data is never stored or shared beyond what is necessary for the app’s functionality.
+                        We do not collect or store any user data on our servers. All data required for the extension's functionality is stored locally within your browser's Chrome local storage.
                     </p>
 
                     <h2 className="text-2xl font-semibold mb-3">Third-Party Services</h2>
                     <p className="mb-4 opacity-90">
-                        Our app may use third-party services, such as analytics or authentication providers, that collect data as per their respective policies.
+                        Our app may use third-party services in the future, such as analytics or authentication providers, that collect data as per their respective policies.
                     </p>
-
-                    <ul className="list-disc list-inside mb-4 opacity-90">
-                        <li>
-                            <a
-                                href="https://www.google.com/policies/privacy/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-blue-600 hover:underline"
-                            >
-                                Google Play Services
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="https://firebase.google.com/policies/analytics"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-blue-600 hover:underline"
-                            >
-                                Google Analytics for Firebase
-                            </a>
-                        </li>
-                    </ul>
 
                     <h2 className="text-2xl font-semibold mb-3">Security</h2>
                     <p className="mb-4 opacity-90">
@@ -57,8 +39,7 @@ const PrivacyPolicy = () => {
                     <p className="mb-4 opacity-90">
                         We may update this Privacy Policy as needed. Please check this page periodically for any changes.
                     </p>
-
-                    <p>This policy is effective as of Mar 22, 2025</p>
+                    <p>This policy is effective as of Mar 29, 2025</p>
 
                     <h2 className="text-2xl font-semibold mb-3">Contact Us</h2>
                     <span>
