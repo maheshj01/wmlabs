@@ -7,6 +7,7 @@ import ErrorRoute from './routes/error';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 import { AppThemeProvider } from './contexts/AppThemeProvider';
 import AutoFillPolicy from './routes/autofill/privacy';
+import PastelogPolicy from './routes/pastelog/privacy';
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "/autofill/privacy-policy",
         element: <AutoFillPolicy />,
+      },
+      {
+        path: "/pastelog/privacy-policy",
+        element: <PastelogPolicy />,
       },
     ],
   },
