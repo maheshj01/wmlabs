@@ -53,6 +53,16 @@ module.exports = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
+        // Epoch's own palette, used by its landing page.
+        epoch: {
+          cream: '#FFF2E0',
+          card: '#FFFDF4',
+          ink: '#2B2018',
+          muted: '#8C7B69',
+          hairline: '#EDE2D2',
+          track: '#E3D8CB',
+          vermilion: '#EF5B25',
+        },
       }
     },
     borderRadius: {

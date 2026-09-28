@@ -1,0 +1,123 @@
+/* Epoch landing page: motion and a few things Tailwind can't express.
+   Every animation stops under prefers-reduced-motion (bottom of file). */
+
+.epoch-page {
+  font-family: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Faint dot paper behind the hero, fading out towards the edges. */
+.ep-paper {
+  background-image: radial-gradient(#e6d9c7 1.2px, transparent 1.2px);
+  background-size: 22px 22px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%);
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%);
+}
+
+/* ---- Year grid ---- */
+.ep-dot--gone { background: #e3d8cb; }
+.ep-dot--ahead { background: #ef5b25; }
+.ep-dot--today {
+  background: #2b2018;
+  box-shadow: 0 0 0 0 rgba(239, 91, 37, 0.55);
+  animation: ep-pulse 2.2s ease-out infinite;
+}
+
+.ep-year > * { opacity: 0; transform: scale(0.2); }
+.ep-year.is-in > * {
+  animation: ep-dot-in 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.25) forwards;
+  animation-delay: calc(var(--i) * 3.2ms);
+}
+.ep-year.is-in > .ep-dot--today {
+  animation:
+    ep-dot-in 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.25) forwards calc(var(--i) * 3.2ms),
+    ep-pulse 2.2s ease-out infinite 1.6s;
+}
+/* Event icons land last, with a little overshoot, after the dots settle. */
+.ep-year.is-in > div {
+  animation: ep-pop 0.6s cubic-bezier(0.2, 0.9, 0.3, 1.5) forwards;
+  animation-delay: calc(1200ms + var(--i) * 1.4ms);
+}
+
+@keyframes ep-dot-in { to { opacity: 1; transform: scale(1); } }
+@keyframes ep-pop {
+  0% { opacity: 0; transform: scale(0.2) rotate(-12deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0); }
+}
+@keyframes ep-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(239, 91, 37, 0.55); }
+  70% { box-shadow: 0 0 0 9px rgba(239, 91, 37, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(239, 91, 37, 0); }
+}
+
+.ep-callout { animation: ep-callout-in 0.18s ease-out; }
+.ep-pop { animation: ep-pop 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.5); }
+@keyframes ep-callout-in {
+  from { opacity: 0; margin-bottom: -6px; }
+  to { opacity: 1; margin-bottom: 0; }
+}
+
+/* ---- Scroll reveals ---- */
+.ep-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s ease, transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--delay, 0ms);
+}
+.ep-reveal.is-in { opacity: 1; transform: none; }
+
+/* ---- Phones ---- */
+.ep-phone { filter: drop-shadow(0 30px 40px rgba(90, 60, 30, 0.22)); }
+/* Switching Android and iPhone swaps the image; fade the new one in. */
+.ep-shot-in { animation: ep-shot-in 0.45s ease-out; }
+@keyframes ep-shot-in { from { opacity: 0; } to { opacity: 1; } }
+.ep-float { animation: ep-float 7s ease-in-out infinite; }
+@keyframes ep-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* Three phones fanned out; they spread when the group is hovered. */
+.ep-fan > * { transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+.ep-fan > :nth-child(1) { transform: translateX(28%) rotate(-7deg) scale(0.9); }
+.ep-fan > :nth-child(3) { transform: translateX(-28%) rotate(7deg) scale(0.9); }
+.ep-fan:hover > :nth-child(1) { transform: translateX(6%) rotate(-4deg) scale(0.92); }
+.ep-fan:hover > :nth-child(3) { transform: translateX(-6%) rotate(4deg) scale(0.92); }
+
+/* ---- Moments marquee ---- */
+.ep-marquee { -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+.ep-marquee-track { animation: ep-marquee 40s linear infinite; }
+.ep-marquee:hover .ep-marquee-track { animation-play-state: paused; }
+@keyframes ep-marquee { to { transform: translateX(-50%); } }
+
+/* ---- Typewriter caret ---- */
+.ep-caret {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  margin-left: 2px;
+  vertical-align: -0.12em;
+  background: #ef5b25;
+  animation: ep-blink 1s steps(1) infinite;
+}
+@keyframes ep-blink { 50% { opacity: 0; } }
+
+/* ---- Range sliders in the app's colours ---- */
+.ep-range { appearance: none; -webkit-appearance: none; height: 28px; background: transparent; cursor: pointer; }
+.ep-range::-webkit-slider-runnable-track { height: 4px; border-radius: 4px; background: #eadfcf; }
+.ep-range::-moz-range-track { height: 4px; border-radius: 4px; background: #eadfcf; }
+.ep-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 22px; height: 22px; margin-top: -9px; border-radius: 50%;
+  background: #ef5b25; border: 4px solid #fffdf4; box-shadow: 0 2px 8px rgba(122, 90, 58, 0.35);
+}
+.ep-range::-moz-range-thumb {
+  width: 14px; height: 14px; border-radius: 50%;
+  background: #ef5b25; border: 4px solid #fffdf4; box-shadow: 0 2px 8px rgba(122, 90, 58, 0.35);
+}
+.ep-range:focus-visible { outline: 2px solid rgba(239, 91, 37, 0.5); outline-offset: 4px; border-radius: 8px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ep-year > *, .ep-reveal { opacity: 1 !important; transform: none !important; animation: none !important; transition: none !important; }
+  .ep-dot--today, .ep-float, .ep-marquee-track, .ep-caret, .ep-callout, .ep-pop, .ep-shot-in { animation: none !important; }
+}
