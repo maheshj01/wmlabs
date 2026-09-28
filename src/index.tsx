@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import PrivacyPolicy from './routes/epoch/privacy';
+import EpochPrivacy from './routes/epoch/privacy/EpochPrivacy';
+import PrivacyPolicy from './routes/privacy';
 import ErrorRoute from './routes/error';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 import { AppThemeProvider } from './contexts/AppThemeProvider';
@@ -37,6 +38,11 @@ const router = createBrowserRouter([
         element: <EpochLanding />,
       },
       {
+        path: "/epoch/privacy",
+        element: <EpochPrivacy />,
+      },
+      {
+        // The general policy, used by apps without their own page.
         path: "/privacy-policy",
         element: <PrivacyPolicy />,
       },

@@ -614,7 +614,7 @@ const Footer: React.FC = () => (
     <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-8 text-sm text-epoch-muted sm:flex-row">
       <p>© {new Date().getFullYear()} Widget Media Labs</p>
       <div className="flex gap-6">
-        <Link to="/privacy-policy" className="hover:text-epoch-ink">
+        <Link to="/epoch/privacy" className="hover:text-epoch-ink">
           Privacy policy
         </Link>
         <Link to="/" className="hover:text-epoch-ink">
