@@ -10,7 +10,7 @@ export interface AppEntry {
 export const APPS: AppEntry[] = [
   {
     name: "Epoch",
-    tagline: "Your year in dots, your life in years, every moment on its day.",
+    tagline: "See your time. Plan what matters. Make every day count.",
     path: "/epoch",
     icon: "/epoch/icon.webp",
     platforms: "Android · iPhone soon",

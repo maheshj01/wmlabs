@@ -51,7 +51,7 @@ const EpochLanding: React.FC = () => {
   useDocumentHead({
     title: "Epoch · Make every day count",
     description:
-      "Epoch shows your year as dots and your life as years, with every moment that matters pinned to its day.",
+      "Don't just count days. See your time as dots, plan what matters, and make every day count.",
     icon: `${process.env.PUBLIC_URL}/epoch/favicon.png`,
     appleTouchIcon: `${process.env.PUBLIC_URL}/epoch/apple-touch-icon.png`,
     themeColor: "#FFF2E0",
@@ -86,11 +86,10 @@ const PlayButton: React.FC<{ size?: "md" | "lg"; tone?: "ink" | "cream" }> = ({
     href={PLAY_URL}
     target="_blank"
     rel="noopener noreferrer"
-    className={`group inline-flex items-center gap-3 rounded-full font-medium transition-transform hover:-translate-y-0.5 active:translate-y-0 ${
-      tone === "ink"
-        ? "bg-epoch-ink text-epoch-cream"
-        : "bg-epoch-cream text-epoch-ink"
-    } ${size === "lg" ? "px-7 py-4 text-base" : "px-5 py-3 text-sm"}`}
+    className={`group inline-flex items-center gap-3 rounded-full font-medium transition-transform hover:-translate-y-0.5 active:translate-y-0 ${tone === "ink"
+      ? "bg-epoch-ink text-epoch-cream"
+      : "bg-epoch-cream text-epoch-ink"
+      } ${size === "lg" ? "px-7 py-4 text-base" : "px-5 py-3 text-sm"}`}
   >
     <PlayGlyph className={size === "lg" ? "h-5 w-5" : "h-4 w-4"} />
     Get it on Google Play
@@ -105,9 +104,8 @@ const PlayButton: React.FC<{ size?: "md" | "lg"; tone?: "ink" | "cream" }> = ({
  *  this is a quiet badge rather than a link until it ships. */
 const AppStoreSoon: React.FC<{ size?: "md" | "lg" }> = ({ size = "md" }) => (
   <span
-    className={`inline-flex items-center gap-3 rounded-full border border-epoch-ink/15 text-epoch-ink ${
-      size === "lg" ? "px-6 py-3.5 text-base" : "px-5 py-3 text-sm"
-    }`}
+    className={`inline-flex items-center gap-3 rounded-full border border-epoch-ink/15 text-epoch-ink ${size === "lg" ? "px-6 py-3.5 text-base" : "px-5 py-3 text-sm"
+      }`}
   >
     <AppleGlyph className={size === "lg" ? "h-5 w-5" : "h-4 w-4"} />
     <span className="leading-tight">
@@ -263,9 +261,9 @@ const Hero: React.FC = () => (
         </Reveal>
         <Reveal delay={120}>
           <p className="mt-6 max-w-md text-lg leading-relaxed text-epoch-muted">
-            Epoch shows your year as dots and your life as years, with every
-            moment that matters pinned to its day. Count down to what's ahead.
-            Look back on what you've lived.
+            A calendar tells you the date. Epoch shows you your time. Every day
+            is a dot, so you can see what's gone, what's left, and what's worth
+            planning before it slips by.
           </p>
         </Reveal>
         <Reveal delay={240}>
@@ -333,19 +331,19 @@ const MarkWhatMatters: React.FC = () => {
     <Section className="grid items-center gap-16 lg:grid-cols-2">
       <Reveal>
         <Feature
-          eyebrow="Mark what matters"
+          eyebrow="Plan what matters"
           title={
             <>
-              Name it. Date it.
+              Don't just count the days.
               <br />
-              Watch it get closer.
+              Plan them.
             </>
           }
-          body="Add a birthday, a race, a launch, a move. Pick an icon and a colour, set a reminder, and write the story behind it if you like."
+          body="The trip you keep talking about. The race you signed up for. Mum's 60th. Give them a date and they stop being someday. Every time you open Epoch, you see them getting closer."
           points={[
-            "Smart icon and colour suggestions from the title",
-            "Reminders ten minutes to a day before",
-            "An optional note for the memory",
+            "Always something to look forward to, right in front of you",
+            "A gentle nudge before the day arrives, so nothing sneaks up on you",
+            "The story behind each moment, kept for when you look back",
           ]}
         />
         {/* A live event card that types itself out, like the app's preview. */}
@@ -408,13 +406,13 @@ const YearDots: React.FC = () => {
         </Reveal>
         <Reveal delay={120} className="order-1 lg:order-2">
           <Feature
-            eyebrow="Your year, dot by dot"
-            title="365 dots. One of them is today."
-            body="The year view turns time into something you can see. Days gone fade to sand, days ahead stay bright, and your moments sit on their days as icons. Tap one to see what's on."
+            eyebrow="See your time"
+            title="You never notice a year passing. Until you see it."
+            body="Calendars hide your time in little boxes you rarely open. Epoch puts your whole year in front of you at once. One glance shows how much is already behind you, how much is left, and where your plans sit in between."
             points={[
-              "Year, month, week and day views, one tap apart",
-              "Stacked days show a badge when there's more than one event",
-              "Tap an icon to open the event",
+              "Feel the year move, not just the date change",
+              "Spot the empty stretches and fill them with something good",
+              "Everything you're looking forward to, in a single glance",
             ]}
           />
         </Reveal>
@@ -427,9 +425,9 @@ const Timeline: React.FC = () => (
   <Section className="grid items-center gap-16 lg:grid-cols-2">
     <Reveal>
       <Feature
-        eyebrow="Countdowns and memories"
-        title="A timeline of your life, in order."
-        body="Everything you've marked lives on one continuous timeline, grouped by month and year. Upcoming moments count down. Past ones count up, so nothing important slips out of view."
+        eyebrow="Look forward. Look back."
+        title="Something to look forward to. Something to look back on."
+        body="The moments that shape your life deserve one home: the ones you're counting down to and the ones you've already lived. The next ones are worth planning. The last ones are worth remembering."
       />
       <div className="mt-10 flex flex-wrap gap-3">
         {[
@@ -440,11 +438,10 @@ const Timeline: React.FC = () => (
         ].map(({ label, ahead }) => (
           <span
             key={label}
-            className={`rounded-full px-4 py-2 text-sm font-medium tabular-nums ${
-              ahead
-                ? "bg-epoch-vermilion/10 text-epoch-vermilion"
-                : "bg-epoch-hairline text-epoch-muted"
-            }`}
+            className={`rounded-full px-4 py-2 text-sm font-medium tabular-nums ${ahead
+              ? "bg-epoch-vermilion/10 text-epoch-vermilion"
+              : "bg-epoch-hairline text-epoch-muted"
+              }`}
           >
             {label}
           </span>
@@ -474,10 +471,10 @@ const LifeInYears: React.FC = () => (
               in years.
             </>
           }
-          body="Your profile turns a lifetime into a grid you can hold in one glance: years lived, years ahead, and the weeks and days between. Not to worry you. To remind you there's still room for the things you keep putting off."
+          body="Seeing a whole life as a grid of dots changes how you spend the rest of it. It's not there to scare you. It's there to remind you there's still time for the things you keep putting off, as long as you start."
         />
         <p className="mt-6 text-sm text-epoch-muted">
-          Try it. Move the sliders.
+          Try it with your own birth year.
         </p>
       </Reveal>
       <Reveal delay={120}>
@@ -495,9 +492,9 @@ const MakeItYours: React.FC = () => (
         Your avatar. Your icons. Your colours.
       </h2>
       <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-epoch-muted">
-        Pick from 36 playful avatars, 150 icons and a palette made for the cream
-        page. Long-press any view to restyle its dots, with a live preview as
-        you go.
+        An app you'll actually want to open. Playful avatars, 150 icons and
+        colours for every kind of moment, so your grid looks like your life
+        and not like a spreadsheet.
       </p>
     </Reveal>
     <Reveal delay={150}>
@@ -521,18 +518,18 @@ const MakeItYours: React.FC = () => (
       {[
         {
           icon: Palette,
-          title: "Styles per view",
-          body: "Year, month and week each keep their own look.",
+          title: "A glance, not a chore",
+          body: "One look tells you more than a week of calendar ever does.",
         },
         {
           icon: Bell,
-          title: "Gentle reminders",
-          body: "A nudge before the moments you're counting down to.",
+          title: "Never miss what matters",
+          body: "A gentle reminder before the moments you're counting down to.",
         },
         {
           icon: Smartphone,
           title: "Android and iPhone",
-          body: "On Android today, iPhone soon. At home on foldables and tablets too.",
+          body: "On Android today, iPhone coming soon.",
         },
       ].map(({ icon: Icon, title, body }, i) => (
         <Reveal key={title} delay={i * 100}>
@@ -557,12 +554,12 @@ const Backup: React.FC = () => (
           Backed up
         </p>
         <h2 className="mt-4 text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl">
-          New phone? Your journey comes with you.
+          Years of memories shouldn't live on one phone.
         </h2>
         <p className="mt-5 max-w-lg text-lg leading-relaxed text-epoch-cream/70">
-          Sign in with Google whenever you're ready. Your events and profile are
-          backed up, and signing in on another phone brings them all back,
-          together with anything you added there.
+          Sign in with Google whenever you're ready and your journey is backed
+          up. Lose your phone, switch phones, reinstall: sign in again and
+          every moment comes back.
         </p>
       </Reveal>
       <Reveal delay={150}>
