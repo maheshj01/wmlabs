@@ -10,7 +10,7 @@ export const SHOT_SIZE: Record<Platform, { width: number; height: number }> = {
 
 const detect = (): Platform =>
   typeof navigator !== "undefined" &&
-  /iPhone|iPad|iPod/i.test(navigator.userAgent)
+    /iPhone|iPad|iPod/i.test(navigator.userAgent)
     ? "ios"
     : "android";
 
@@ -19,7 +19,7 @@ const PlatformContext = createContext<{
   setPlatform: (p: Platform) => void;
 }>({
   platform: "android",
-  setPlatform: () => {},
+  setPlatform: () => { },
 });
 
 /** Which phone the page shows: the visitor's own by default, switchable. */
@@ -41,11 +41,11 @@ export const PlatformSwitch: React.FC = () => {
   const { platform, setPlatform } = usePlatform();
   const options: Array<[Platform, string]> = [
     ["android", "Android"],
-    ["ios", "iPhone"],
+    ["ios", "iOS"],
   ];
   return (
     <div className="inline-flex items-center gap-3 text-sm text-epoch-muted">
-      <span id="ep-platform-label">Screens from</span>
+      <span id="ep-platform-label">Platform</span>
       <div
         role="radiogroup"
         aria-labelledby="ep-platform-label"
@@ -60,11 +60,10 @@ export const PlatformSwitch: React.FC = () => {
               role="radio"
               aria-checked={selected}
               onClick={() => setPlatform(value)}
-              className={`rounded-full px-3.5 py-1.5 text-sm font-medium transition-colors ${
-                selected
-                  ? "bg-epoch-card text-epoch-ink shadow-sm"
-                  : "text-epoch-muted hover:text-epoch-ink"
-              }`}
+              className={`rounded-full px-3.5 py-1.5 text-sm font-medium transition-colors ${selected
+                ? "bg-epoch-card text-epoch-ink shadow-sm"
+                : "text-epoch-muted hover:text-epoch-ink"
+                }`}
             >
               {label}
             </button>

@@ -5,8 +5,9 @@ import {
   Palette,
   Smartphone,
 } from "lucide-react";
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import { useDocumentHead } from "../../../useDocumentHead";
 import { SAMPLE_EVENTS } from "./events";
 import { useInView, useParallax, useTypewriter } from "./hooks";
 import LifeGrid from "./LifeGrid";
@@ -47,13 +48,14 @@ const AppleGlyph: React.FC<{ className?: string }> = ({ className }) => (
 
 /** Standalone landing page for Epoch, the life-in-dots countdown app. */
 const EpochLanding: React.FC = () => {
-  useEffect(() => {
-    const previous = document.title;
-    document.title = "Epoch · Make every day count";
-    return () => {
-      document.title = previous;
-    };
-  }, []);
+  useDocumentHead({
+    title: "Epoch · Make every day count",
+    description:
+      "Epoch shows your year as dots and your life as years, with every moment that matters pinned to its day.",
+    icon: `${process.env.PUBLIC_URL}/epoch/favicon.png`,
+    appleTouchIcon: `${process.env.PUBLIC_URL}/epoch/apple-touch-icon.png`,
+    themeColor: "#FFF2E0",
+  });
 
   return (
     <PlatformProvider>
