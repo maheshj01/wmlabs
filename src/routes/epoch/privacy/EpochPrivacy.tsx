@@ -3,7 +3,7 @@ import React from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { useDocumentHead } from "../../../useDocumentHead";
 
-const EFFECTIVE = "27 September 2026";
+const EFFECTIVE = "29 September 2026";
 const CONTACT = process.env.REACT_APP_CONTACT_EMAIL;
 
 interface Block {
@@ -153,8 +153,16 @@ const SECTIONS: Block[] = [
             from the phone and keeps your backup, so you can restore it later.
           </>,
           <>
-            To delete your account and its backup, email <Mail /> from the address you signed in with, or tell us
-            it's an unsigned account and we'll help you find it. We delete it within 30 days.
+            <strong className="font-medium text-epoch-ink">Settings, Delete account</strong> deletes your account and
+            its backup. If you signed in with Google or Apple, it is paused at once and deleted for good after 30 days;
+            signing in again before then restores it. If you never signed in, it is deleted immediately.
+          </>,
+          <>
+            No longer have the app? See{" "}
+            <Link to="/epoch/delete-account" className="font-medium text-epoch-vermilion underline-offset-4 hover:underline">
+              how to delete your account
+            </Link>{" "}
+            or email <Mail />.
           </>,
         ]}
       />

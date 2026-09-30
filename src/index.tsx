@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import EpochPrivacy from './routes/epoch/privacy/EpochPrivacy';
+import EpochDeleteAccount from './routes/epoch/delete-account/EpochDeleteAccount';
 import PrivacyPolicy from './routes/privacy';
 import ErrorRoute from './routes/error';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: "/epoch/privacy",
         element: <EpochPrivacy />,
+      },
+      {
+        path: "/epoch/delete-account",
+        element: <EpochDeleteAccount />,
       },
       {
         // The general policy, used by apps without their own page.
