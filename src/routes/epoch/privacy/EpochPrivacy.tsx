@@ -3,7 +3,7 @@ import React from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { useDocumentHead } from "../../../useDocumentHead";
 
-const EFFECTIVE = "29 September 2026";
+const EFFECTIVE = "4 October 2026";
 const CONTACT = process.env.REACT_APP_CONTACT_EMAIL;
 
 interface Block {
@@ -77,11 +77,34 @@ const SECTIONS: Block[] = [
     ),
   },
   {
-    heading: "Signing in with Google",
+    heading: "Your calendar",
+    body: (
+      <List
+        items={[
+          <>
+            Bringing in moments from your calendar is optional and only starts when you ask for it. With your
+            permission, Epoch reads the calendar on your phone once, from the past year and the next, to suggest
+            trips, birthdays and plans worth counting down to.
+          </>,
+          <>
+            Reading happens on your phone. Only the events you choose to keep are added to Epoch, and they are then
+            stored and backed up like any event you add yourself. Nothing else from your calendar leaves your phone.
+          </>,
+          <>
+            Epoch never adds, changes or deletes anything in your calendar. You can turn calendar access off at any
+            time in your phone's settings.
+          </>,
+        ]}
+      />
+    ),
+  },
+  {
+    heading: "Signing in with Apple or Google",
     body: (
       <p>
-        Signing in is optional. If you choose to, Google shares your name, email address and profile picture with us
-        through Firebase Authentication. We use them only to recognise your account so your journey can be restored.
+        Signing in is optional. If you choose to, Apple or Google shares your name and email address with us through
+        Firebase Authentication (Google also shares your profile picture; with Apple you can hide your email behind a
+        private relay address). We use them only to recognise your account so your journey can be restored.
       </p>
     ),
   },
