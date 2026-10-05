@@ -11,6 +11,7 @@ import { AppThemeProvider } from './contexts/AppThemeProvider';
 import AutoFillPolicy from './routes/autofill/privacy';
 import PastelogPolicy from './routes/pastelog/privacy';
 import EpochLanding from './routes/epoch/landing/EpochLanding';
+import EpochOpen from './routes/epoch/open/EpochOpen';
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "/epoch",
         element: <EpochLanding />,
+      },
+      {
+        path: "/epoch/open",
+        element: <EpochOpen />,
       },
       {
         path: "/epoch/privacy",

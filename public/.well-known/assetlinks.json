@@ -1,0 +1,14 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.wml.epoch",
+      "sha256_cert_fingerprints": [
+        "79:EC:73:A7:BC:7B:B6:57:A6:2D:93:11:D2:9D:FB:CD:05:24:70:83:3A:B5:68:6B:B9:85:28:22:7B:7D:0E:4C",
+        "D3:7C:A3:2B:86:73:56:A9:D1:35:4A:39:86:D9:21:9D:C2:8D:C9:1B:04:20:D8:D3:16:A3:F3:24:77:BC:C6:10",
+        "79:77:ED:F4:78:7B:8F:62:B4:BA:85:AF:96:F3:C8:47:40:4E:E6:ED:8F:93:F9:B1:B9:20:80:DC:7A:8F:CB:A7"
+      ]
+    }
+  }
+]

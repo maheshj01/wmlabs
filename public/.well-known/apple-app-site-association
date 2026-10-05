@@ -1,0 +1,10 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["K93L2F9Z28.com.wml.epoch"],
+        "components": [{ "/": "/epoch/open*", "comment": "Open epoch from an email" }]
+      }
+    ]
+  }
+}
