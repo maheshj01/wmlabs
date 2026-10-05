@@ -104,7 +104,8 @@ const SECTIONS: Block[] = [
       <p>
         Signing in is optional. If you choose to, Apple or Google shares your name and email address with us through
         Firebase Authentication (Google also shares your profile picture; with Apple you can hide your email behind a
-        private relay address). We use them only to recognise your account so your journey can be restored.
+        private relay address). We use them only to recognise your account so your journey can be restored, and
+        to email you when your account is set to be deleted or is brought back.
       </p>
     ),
   },
@@ -179,6 +180,11 @@ const SECTIONS: Block[] = [
             <strong className="font-medium text-epoch-ink">Settings, Delete account</strong> deletes your account and
             its backup. If you signed in with Google or Apple, it is paused at once and deleted for good after 30 days;
             signing in again before then restores it. If you never signed in, it is deleted immediately.
+          </>,
+          <>
+            <strong className="font-medium text-epoch-ink">Accounts not opened for two years</strong> are let go. If
+            you never signed in, the account is deleted. If you signed in with Google or Apple, we email you and delete
+            it 30 days later; opening Epoch before then keeps it.
           </>,
           <>
             No longer have the app? See{" "}
