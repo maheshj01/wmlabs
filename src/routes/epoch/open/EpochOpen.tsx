@@ -1,10 +1,8 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDocumentHead } from "../../../useDocumentHead";
+import { APP_STORE_URL, PLAY_URL, isAppleDevice } from "../stores";
 
-const PLAY_URL = "https://play.google.com/store/apps/details?id=com.wml.epoch";
-/** Fill in with the App Store id once epoch is live there; until then iOS lands on /epoch. */
-const APP_STORE_URL = "";
 
 /**
  * /epoch/open, the link in epoch's emails. With the app installed, the
@@ -21,10 +19,9 @@ const EpochOpen: React.FC = () => {
     themeColor: "#FFF2E0",
   });
 
-  const ua = navigator.userAgent;
-  const store = /android/i.test(ua)
+  const store = /android/i.test(navigator.userAgent)
     ? PLAY_URL
-    : /iphone|ipad|ipod/i.test(ua) && APP_STORE_URL
+    : isAppleDevice()
       ? APP_STORE_URL
       : null;
 
@@ -40,11 +37,9 @@ const EpochOpen: React.FC = () => {
         <a href={PLAY_URL} className="text-epoch-vermilion underline-offset-4 hover:underline">
           Google Play
         </a>
-        {APP_STORE_URL && (
-          <a href={APP_STORE_URL} className="text-epoch-vermilion underline-offset-4 hover:underline">
-            App Store
-          </a>
-        )}
+        <a href={APP_STORE_URL} className="text-epoch-vermilion underline-offset-4 hover:underline">
+          App Store
+        </a>
         <Link to="/epoch" className="text-epoch-muted underline-offset-4 hover:underline">
           About Epoch
         </Link>

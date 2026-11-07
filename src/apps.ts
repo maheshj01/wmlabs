@@ -13,6 +13,6 @@ export const APPS: AppEntry[] = [
     tagline: "See your time. Plan what matters. Make every day count.",
     path: "/epoch",
     icon: "/epoch/icon.webp",
-    platforms: "Android · iPhone soon",
+    platforms: "iPhone · Android",
   },
 ];

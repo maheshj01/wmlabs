@@ -8,6 +8,7 @@ import {
 import React from "react";
 import { Link } from "react-router-dom";
 import { useDocumentHead } from "../../../useDocumentHead";
+import { APP_STORE_URL, PLAY_URL, isAppleDevice } from "../stores";
 import { SAMPLE_EVENTS } from "./events";
 import { useInView, useParallax, useTypewriter } from "./hooks";
 import LifeGrid from "./LifeGrid";
@@ -20,7 +21,6 @@ import {
 import YearGrid from "./YearGrid";
 import "./epoch.css";
 
-const PLAY_URL = "https://play.google.com/store/apps/details?id=com.wml.epoch";
 
 /** Google Play mark (Simple Icons, CC0). */
 const PlayGlyph: React.FC<{ className?: string }> = ({ className }) => (
@@ -78,17 +78,17 @@ const EpochLanding: React.FC = () => {
 
 /* ------------------------------------------------------------------ */
 
-const PlayButton: React.FC<{ size?: "md" | "lg"; tone?: "ink" | "cream" }> = ({
+const PlayButton: React.FC<{ size?: "md" | "lg"; filled?: boolean }> = ({
   size = "md",
-  tone = "ink",
+  filled = true,
 }) => (
   <a
     href={PLAY_URL}
     target="_blank"
     rel="noopener noreferrer"
-    className={`group inline-flex items-center gap-3 rounded-full font-medium transition-transform hover:-translate-y-0.5 active:translate-y-0 ${tone === "ink"
+    className={`group inline-flex items-center gap-3 rounded-full font-medium transition-transform hover:-translate-y-0.5 active:translate-y-0 ${filled
       ? "bg-epoch-ink text-epoch-cream"
-      : "bg-epoch-cream text-epoch-ink"
+      : "border border-epoch-ink/15 text-epoch-ink"
       } ${size === "lg" ? "px-7 py-4 text-base" : "px-5 py-3 text-sm"}`}
   >
     <PlayGlyph className={size === "lg" ? "h-5 w-5" : "h-4 w-4"} />
@@ -100,21 +100,22 @@ const PlayButton: React.FC<{ size?: "md" | "lg"; tone?: "ink" | "cream" }> = ({
   </a>
 );
 
-/** The iPhone app is waiting on App Store review of the developer account, so
- *  this is a quiet badge rather than a link until it ships. */
-const AppStoreSoon: React.FC<{ size?: "md" | "lg" }> = ({ size = "md" }) => (
-  <span
-    className={`inline-flex items-center gap-3 rounded-full border border-epoch-ink/15 text-epoch-ink ${size === "lg" ? "px-6 py-3.5 text-base" : "px-5 py-3 text-sm"
-      }`}
+const AppStoreButton: React.FC<{ size?: "md" | "lg"; filled?: boolean }> = ({
+  size = "md",
+  filled = false,
+}) => (
+  <a
+    href={APP_STORE_URL}
+    target="_blank"
+    rel="noopener noreferrer"
+    className={`group inline-flex items-center gap-3 rounded-full font-medium transition-transform hover:-translate-y-0.5 active:translate-y-0 ${filled
+      ? "bg-epoch-ink text-epoch-cream"
+      : "border border-epoch-ink/15 text-epoch-ink"
+      } ${size === "lg" ? "px-7 py-4 text-base" : "px-5 py-3 text-sm"}`}
   >
     <AppleGlyph className={size === "lg" ? "h-5 w-5" : "h-4 w-4"} />
-    <span className="leading-tight">
-      <span className="block text-[10px] font-semibold uppercase tracking-[0.16em] text-epoch-muted">
-        Coming soon
-      </span>
-      <span className="block font-medium">App Store</span>
-    </span>
-  </span>
+    Download on the App Store
+  </a>
 );
 
 const StoreButtons: React.FC<{ size?: "md" | "lg"; center?: boolean }> = ({
@@ -124,8 +125,18 @@ const StoreButtons: React.FC<{ size?: "md" | "lg"; center?: boolean }> = ({
   <div
     className={`flex flex-wrap items-center gap-3 ${center ? "justify-center" : ""}`}
   >
-    <PlayButton size={size} />
-    <AppStoreSoon size={size} />
+    {/* The visitor's own store comes first and filled. */}
+    {isAppleDevice() ? (
+      <>
+        <AppStoreButton size={size} filled />
+        <PlayButton size={size} filled={false} />
+      </>
+    ) : (
+      <>
+        <PlayButton size={size} />
+        <AppStoreButton size={size} />
+      </>
+    )}
   </div>
 );
 
@@ -231,12 +242,12 @@ const Nav: React.FC = () => (
         <span className="text-lg font-semibold tracking-tight">Epoch</span>
       </Link>
       <a
-        href={PLAY_URL}
+        href={isAppleDevice() ? APP_STORE_URL : PLAY_URL}
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center gap-2 rounded-full bg-epoch-ink px-4 py-2 text-sm font-medium text-epoch-cream transition-transform hover:-translate-y-0.5"
       >
-        <PlayGlyph className="h-3.5 w-3.5" />
+        {isAppleDevice() ? <AppleGlyph className="h-3.5 w-3.5" /> : <PlayGlyph className="h-3.5 w-3.5" />}
         Get the app
       </a>
     </nav>
@@ -252,7 +263,7 @@ const Hero: React.FC = () => (
     <Section className="relative grid items-center gap-14 !pt-12 sm:!pt-20 lg:grid-cols-[1.05fr_1fr]">
       <div>
         <Reveal>
-          <Eyebrow>On Android · Coming to iPhone</Eyebrow>
+          <Eyebrow>On iPhone and Android</Eyebrow>
           <h1 className="mt-5 text-5xl font-semibold leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl">
             Make every
             <br />
@@ -529,7 +540,7 @@ const MakeItYours: React.FC = () => (
         {
           icon: Smartphone,
           title: "Android and iPhone",
-          body: "On Android today, iPhone coming soon.",
+          body: "On the App Store and Google Play, at home on tablets and foldables too.",
         },
       ].map(({ icon: Icon, title, body }, i) => (
         <Reveal key={title} delay={i * 100}>
