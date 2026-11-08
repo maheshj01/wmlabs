@@ -500,11 +500,11 @@ const MakeItYours: React.FC = () => (
     <Reveal>
       <Eyebrow>Make it yours</Eyebrow>
       <h2 className="mx-auto mt-4 max-w-2xl text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl">
-        Your avatar. Your icons. Your colours.
+        Your avatar. Your icons. Your colors.
       </h2>
       <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-epoch-muted">
         An app you'll actually want to open. Playful avatars, 150 icons and
-        colours for every kind of moment, so your grid looks like your life
+        colors for every kind of moment, so your grid looks like your life
         and not like a spreadsheet.
       </p>
     </Reveal>
@@ -516,7 +516,7 @@ const MakeItYours: React.FC = () => (
         />
         <Phone
           name="add_event_icons"
-          alt="Choosing an icon and colour for an event"
+          alt="Choosing an icon and color for an event"
           className="relative z-10"
         />
         <Phone

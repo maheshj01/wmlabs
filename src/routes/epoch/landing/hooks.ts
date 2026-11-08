@@ -85,7 +85,7 @@ export function useTypewriter(words: string[], { type = 70, erase = 35, hold = 1
 }
 
 /** Moves the element vertically by [speed] × its distance from the viewport
- *  centre. Writes the transform directly, so scrolling never re-renders. */
+ *  center. Writes the transform directly, so scrolling never re-renders. */
 export function useParallax<T extends HTMLElement>(speed: number) {
   const ref = useRef<T>(null);
 

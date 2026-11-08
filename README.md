@@ -6,13 +6,13 @@ Built with Create React App, TypeScript, Tailwind CSS and React Router.
 
 ## Pages
 
-| Path | Page |
-| --- | --- |
-| `/` | Home, with the list of apps |
-| `/epoch` | Epoch landing page |
-| `/privacy-policy` | Epoch privacy policy |
-| `/autofill/privacy-policy` | Autofill privacy policy |
-| `/pastelog/privacy-policy` | Pastelog privacy policy |
+| Path                       | Page                        |
+| -------------------------- | --------------------------- |
+| `/`                        | Home, with the list of apps |
+| `/epoch`                   | Epoch landing page          |
+| `/privacy-policy`          | Epoch privacy policy        |
+| `/autofill/privacy-policy` | Autofill privacy policy     |
+| `/pastelog/privacy-policy` | Pastelog privacy policy     |
 
 ## Adding an app page
 
@@ -21,7 +21,7 @@ Built with Create React App, TypeScript, Tailwind CSS and React Router.
 3. List it on the home page in `src/apps.ts`.
 4. Give it its own tab title and icon with `useDocumentHead` (see `src/useDocumentHead.ts`).
 
-The Epoch page lives in `src/routes/epoch/landing/`. Its colours are the `epoch-*` tokens in `tailwind.config.js`.
+The Epoch page lives in `src/routes/epoch/landing/`. Its colors are the `epoch-*` tokens in `tailwind.config.js`.
 
 > This Tailwind config replaces the default radius and border-width scales, so `rounded-xl`, `rounded-2xl` and similar classes don't exist. Use arbitrary values such as `rounded-[16px]`.
 

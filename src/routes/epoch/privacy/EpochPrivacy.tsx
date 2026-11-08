@@ -54,7 +54,7 @@ const SECTIONS: Block[] = [
           </>,
           <>
             <strong className="font-medium text-epoch-ink">Your events:</strong> title, date and time, note, icon,
-            colour, category, reminder choice, and when each was created and last changed.
+            color, category, reminder choice, and when each was created and last changed.
           </>,
           <>
             <strong className="font-medium text-epoch-ink">Your settings</strong> and progress styles, which stay on
@@ -114,7 +114,7 @@ const SECTIONS: Block[] = [
     body: (
       <p>
         When you type an event's title, the title and note are sent to our server, which asks TypeSafe (typesafe.ai),
-        an AI service, to suggest a category, icon and colour. Our server keeps the title in its logs for a short time
+        an AI service, to suggest a category, icon and color. Our server keeps the title in its logs for a short time
         to find and fix problems. Suggestions are never used to identify you.
       </p>
     ),
