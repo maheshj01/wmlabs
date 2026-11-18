@@ -10,6 +10,8 @@ Built with Create React App, TypeScript, Tailwind CSS and React Router.
 | -------------------------- | --------------------------- |
 | `/`                        | Home, with the list of apps |
 | `/epoch`                   | Epoch landing page          |
+| `/three-bucks`             | Three Bucks landing page    |
+| `/three-bucks/privacy`     | Three Bucks privacy policy  |
 | `/privacy-policy`          | Epoch privacy policy        |
 | `/autofill/privacy-policy` | Autofill privacy policy     |
 | `/pastelog/privacy-policy` | Pastelog privacy policy     |
@@ -22,6 +24,8 @@ Built with Create React App, TypeScript, Tailwind CSS and React Router.
 4. Give it its own tab title and icon with `useDocumentHead` (see `src/useDocumentHead.ts`).
 
 The Epoch page lives in `src/routes/epoch/landing/`. Its colors are the `epoch-*` tokens in `tailwind.config.js`.
+
+The Three Bucks page lives in `src/routes/three-bucks/` and uses the `tb-*` tokens. Its store links are in `stores.ts`; while they are `null` the page says "Coming soon". The screenshots in `public/three-bucks/ios/` come from the app repo's `make capture-screens` run.
 
 > This Tailwind config replaces the default radius and border-width scales, so `rounded-xl`, `rounded-2xl` and similar classes don't exist. Use arbitrary values such as `rounded-[16px]`.
 

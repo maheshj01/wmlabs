@@ -15,4 +15,11 @@ export const APPS: AppEntry[] = [
     icon: "/epoch/icon.webp",
     platforms: "iPhone · Android",
   },
+  {
+    name: "Three Bucks",
+    tagline: "Know where every buck goes. Expenses in one line, investing kept apart.",
+    path: "/three-bucks",
+    icon: "/three-bucks/icon.webp",
+    platforms: "Coming soon · iPhone · Android",
+  },
 ];
