@@ -12,6 +12,8 @@ import AutoFillPolicy from './routes/autofill/privacy';
 import PastelogPolicy from './routes/pastelog/privacy';
 import EpochLanding from './routes/epoch/landing/EpochLanding';
 import EpochOpen from './routes/epoch/open/EpochOpen';
+import ThreeBucksLanding from './routes/three-bucks/ThreeBucksLanding';
+import ThreeBucksPrivacy from './routes/three-bucks/privacy/ThreeBucksPrivacy';
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -50,6 +52,14 @@ const router = createBrowserRouter([
       {
         path: "/epoch/delete-account",
         element: <EpochDeleteAccount />,
+      },
+      {
+        path: "/three-bucks",
+        element: <ThreeBucksLanding />,
+      },
+      {
+        path: "/three-bucks/privacy",
+        element: <ThreeBucksPrivacy />,
       },
       {
         // The general policy, used by apps without their own page.

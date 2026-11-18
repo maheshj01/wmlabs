@@ -63,6 +63,23 @@ module.exports = {
           track: '#E3D8CB',
           vermilion: '#EF5B25',
         },
+        // Three Bucks' palette, from the app's theme.
+        tb: {
+          paper: '#FAF9F6',
+          card: '#FFFFFF',
+          sunk: '#F2F0EB',
+          ink: '#15171A',
+          muted: '#5E6369',
+          line: '#E6E2DA',
+          lived: '#1D7A52',
+          'lived-soft': '#E2F1E8',
+          invested: '#4057D6',
+          'invested-soft': '#E7EBFF',
+          earned: '#B7791F',
+          'earned-soft': '#FBF0DC',
+          warn: '#C2410C',
+          'warn-soft': '#FDEBDF',
+        },
       }
     },
     borderRadius: {
