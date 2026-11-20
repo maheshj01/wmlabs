@@ -12,6 +12,7 @@ Built with Create React App, TypeScript, Tailwind CSS and React Router.
 | `/epoch`                   | Epoch landing page          |
 | `/three-bucks`             | Three Bucks landing page    |
 | `/three-bucks/privacy`     | Three Bucks privacy policy  |
+| `/three_bucks/delete-account` | Three Bucks account deletion |
 | `/privacy-policy`          | Epoch privacy policy        |
 | `/autofill/privacy-policy` | Autofill privacy policy     |
 | `/pastelog/privacy-policy` | Pastelog privacy policy     |

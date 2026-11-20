@@ -149,6 +149,13 @@ const SECTIONS: Block[] = [
             To have your backed-up entries and categories deleted as well, email <Mail /> from the address you signed
             in with, or include your username.
           </>,
+          <>
+            No longer have the app? See{" "}
+            <Link to="/three_bucks/delete-account" className="font-medium text-tb-lived underline-offset-4 hover:underline">
+              how to delete your account
+            </Link>
+            .
+          </>,
         ]}
       />
     ),
